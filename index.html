@@ -12,37 +12,20 @@
       box-sizing: border-box;
       margin: 4px;
     }
-     .background {
-      color: white;
-     }
-     h1.background {
-        background-color: yellow;
-      }
+    div.parent div:nth-child(2){
+       background-color: lime;
+    }
 
-      h2.background {
-        background-color: black;
-      }
 
-      h2.background#unique {
-        background-color: cyan;
-      }
-
-      h3.background {
-        background-color: crimson;
-      }
-
-      span.background {
-        background-color: orange;
-       
-      }
     </style>
 </head>
 <body>
-    <h1 class="background">Heading One</h1>
-    <h2  id="unique"class="background" >Heading Two</h2>
-    <h2 class="background">Second Heading Two</h2>
-    <h3 class="background">Heading Three</h3>
+   <div class="parent">
+     <div>I'm a div</div>
+     <div>I'm a second div</div>
+     <div>I'm a third div</div>
+   </div>
    
-  <span class="background">I'm a span</span>
+  
  </body>
  </html>
