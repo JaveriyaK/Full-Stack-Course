@@ -1,9 +1,16 @@
-setTimeout(() => 
+let value =  new Promise((resolve, reject) => 
 {
-    console.log('Timer')
-}, 0)
+    setTimeout(() => 
+    {
+        resolve ('Hello')
+    }, 1000)
+})
+console.log(value)
 
-for (var i =  0; i < 50000; i++)
-{
-    console.log(i)
-}
+
+
+
+    setTimeout(() => 
+    {
+        console.log(value)
+    },  2000)
