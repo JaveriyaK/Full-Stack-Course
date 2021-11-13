@@ -1,34 +1,12 @@
-var button = document.querySelector('button')
-var input  = document.querySelector('input')
-var list   = document.querySelector('ul')
-
-var chores = []
-
-var deleteItem = (value) => 
-{
-    const index = chores.indexOf(value)
-    chores.splice(index, 1)
-    console.log(chores)
-}
-
-const  callbackfunc = (event) => 
-{
-    const inputValue = input.value
-    if (chores.includes(input.value))
+let car = {
+    name : "C Class",
+    manufacturer : "Mercedes",
+    print : () => 
     {
-        console.log('already exists')
+     console.log(`${car.name} was created by ${car.manufacturer}`)
     }
-    else 
-    {
-            chores.push(inputValue)
-            const element = document.createElement('li')
-            const textNode = document.createTextNode(inputValue)
-            element.appendChild(textNode)
-            list.appendChild(element)
-            element.addEventListener('click', (e) => {
-            
-            e.target.remove() } )
-    }  
 }
 
-button.addEventListener('click', callbackfunc)
+console.log(car)
+
+console.log(car.hasOwnProperty('manufacturer'))
