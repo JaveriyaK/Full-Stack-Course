@@ -1,12 +1,9 @@
-let car = {
-    name : "C Class",
-    manufacturer : "Mercedes",
-    print : () => 
-    {
-     console.log(`${car.name} was created by ${car.manufacturer}`)
-    }
+setTimeout(() => 
+{
+    console.log('Timer')
+}, 0)
+
+for (var i =  0; i < 50000; i++)
+{
+    console.log(i)
 }
-
-console.log(car)
-
-console.log(car.hasOwnProperty('manufacturer'))
