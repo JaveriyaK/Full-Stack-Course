@@ -1,25 +1,20 @@
-const table = document.querySelector('table')
-console.log(table)
-
-const CreateRow = (user) => {
-    let newRow = document.createElement('tr')
-    let element = `
-           <td>${user.id}</td>
-           <td>${user.name}</td>
-           <td>${user.email}</td>
-           <td>${user.username}</td>`
-    newRow.innerHTML = element
-    return newRow
+const ul = document.querySelector('ul')
+const but = document.querySelector('button')
+const getText = document.querySelector('input')
+const getdata = async (item) => 
+{
+    console.log(item)
+    const url = `https://api.edamam.com/search?app_id=bd51454f&
+    app_key=3b359328e30cad3141319969dfedaba9&q=${item}`
+    console.log(url)
+    const res = await fetch(url)
+    const data = await res.json()
+    console.log(data.hits)
 }
 
-fetch('https://jsonplaceholder.typicode.com/users')
-.then(res => res.json())
-.then(data => {
-    console.log(data)
-    data.forEach(user => {
-       
-       table.appendChild(CreateRow(user))
-    })
-        
-    
+//add event listener to the button
+but.addEventListener('click', (e) =>
+{
+    console.log(e.target.value)
+    getdata(e.target.value)
 })
