@@ -1,13 +1,5 @@
-const button = document.querySelector('button')
-const input = document.querySelector('input')
-const div = document.querySelector('div')
+const path = require('path')
 
-const arr  = [1, 2, 3, 4, 5]
+console.log(path.resolve('./app.js'))    //absolute path
 
-
-localStorage.setItem('val', JSON.stringify(arr))
-
- console.log(JSON.parse(localStorage.getItem('val')))
-
-
-
+console.log(path.relative('/', "./app.js"))    //relative path
