@@ -1,11 +1,17 @@
-const path = require('path')
+const fs = require('fs')
 
-console.log(path.extname('./app.js'))    
+// fs.readFile('./test.txt',  (error, data) => 
+// {
+//     if(error) console.log(error)
+//     else console.log(data.toString())
+// })
 
-console.log(path.dirname('./utils.js'))
+// console.log(fs.readFileSync('./test.txt', 'utf8'))
 
-console.log(path.resolve('./app.js'))
+// console.log(`I'm a random log`)
 
-console.log(path.relative('./', "./utils.js"))
-
-console.log(path.join(__dirname, 'app.js'))
+fs.writeFile('./test.txt', `Append me ${(fs.readFileSync('./test.txt', 'utf8'))}`, (error) => 
+{
+    if (error) 
+    console.log(error)
+})
