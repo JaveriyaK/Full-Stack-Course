@@ -3,17 +3,12 @@ const data = [{name: "Javeriya"}, {name: "Anisha"},{name: "Pri"},]
 const express = require('express')
 const app = express()
 
-app.get('/login', (req, res) =>
+app.get('/getNames', (req, res) =>
 {
     console.log(req.url)
-    res.send('This is signup')
+    res.send(data)
 })
 
-app.get('/signup', (req, res) =>
-{
-    console.log(req.url)
-    res.send('This is SIGNUP')
-})
 
 app.listen(3000, () =>
 {
