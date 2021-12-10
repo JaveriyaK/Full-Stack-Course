@@ -2,7 +2,7 @@ const data = [{name: "Javeriya"}, {name: "Anisha"},{name: "Pri"},]
 
 const express = require('express')
 const app = express()
-
+// get request
 app.get('/getNames', (req, res) =>
 {
     console.log(req.url)
