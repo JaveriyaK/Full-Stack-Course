@@ -1,16 +1,37 @@
-const data = [{name: "Javeriya"}, {name: "Anisha"},{name: "Pri"},]
-
 const express = require('express')
 const app = express()
+
+const PORT = 3000
 // get request
-app.get('/getNames', (req, res) =>
-{
-    console.log(req.url)
-    res.send(data)
+app.get('/', (req, res) =>
+{  
+   res.send('GET')
+})
+
+app.post('/', (req, res) =>
+{  
+   res.send('POST')
+})
+
+app.put('/', (req, res) =>
+{  
+   res.send('PUT')
+})
+
+app.patch('/', (req, res) =>
+{  
+   res.send('PATCH')
+})
+
+app.delete('/', (req, res) =>
+{  
+   res.send('DELETE')
 })
 
 
-app.listen(3000, () =>
+
+app.listen(PORT, () =>
 {
-    console.log("Server Listening at port 3000")
+    console.log(`Server Listening at port ${PORT}`)
 })
+
