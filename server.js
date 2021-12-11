@@ -1,33 +1,20 @@
 const express = require('express')
+const res = require('express/lib/response')
 const app = express()
-
 const PORT = 3000
-// get request
-app.get('/', (req, res) =>
-{  
-   res.send('GET')
-})
 
-app.post('/', (req, res) =>
-{  
-   res.send('POST')
-})
+const verify = (req,res,next) => 
+{
+   if(req.headers['user-agent'] === "Thunder Client (https://www.thunderclient.io)")
+   next()
+   else res.send("Blocked")
+}
 
-app.put('/', (req, res) =>
-{  
-   res.send('PUT')
-})
 
-app.patch('/', (req, res) =>
+app.get('/', verify, (req, res) =>
 {  
-   res.send('PATCH')
+    res.send("Verified")
 })
-
-app.delete('/', (req, res) =>
-{  
-   res.send('DELETE')
-})
-
 
 
 app.listen(PORT, () =>
