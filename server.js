@@ -1,17 +1,23 @@
-let arr = [{chore : 'Go to the GYM', status : "incomplete"}, {chore : 'Cook Food', status : "incomplete"},
- {chore : 'Go for Jog', status : "complete"}]
+const express = require('express')
+const app = express()
+const PORT = 3001
 
- const renderList = (filter = 'all') => {
-     arr.forEach(element => {
-        if (filter === 'all') {
-            console.log(element)
-        }
-         else if(element.status === filter)  {
-             console.log(element)
-         }
-     })
- }
+app.get('/products/cases')
+app.get('/products/protection')
+app.get('/products/bands')
 
- renderList()
- renderList('incomplete')
- renderList('complete')
+app.get('/products/:categories', (req, res) => {
+    if(req.params.categories == 'iphone') {}
+    if(req.params.categories == 'Mac') {}
+    if(req.params.categories == 'ipad') {}
+    if(req.params.categories == 'Music') {}
+    console.log(req.params)
+    res.send("PING")
+})
+
+
+
+
+app.listen(PORT, () => {
+    console.log("Server Listening at port ${PORT}")
+})
