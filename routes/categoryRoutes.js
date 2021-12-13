@@ -10,13 +10,14 @@ METHOD: GET
 
 router.get('/all', (req, res) => {
     try {
-        res.status(200).json({
+        res.json({
             categories : database.categories,
             message : "Successfully fetched categories",
             status : "SUCCESS"
         })
     } catch (error) {
-        res.status(200).json({
+        console.log(error)
+        res.json({
             categories : [],
             message : error.message,
             status : "FAILED"
@@ -57,7 +58,7 @@ router.post('/add', (req, res) => {
 
 
 /*
-ROUTE: http://localhost:3001/category/delete
+ROUTE: http://localhost:3001/category/delete/:id
 METHOD: DELETE
 */
 
@@ -86,7 +87,17 @@ router.delete('/delete/:id', (req, res) => {
             message: error.message,
             status: "FAILED"
         })
+
     }
 })
+
+
+/*
+ROUTE: http://localhost:3001/category/update/:id
+METHOD: PUT
+*/
+
+
+
 
 module.exports = router

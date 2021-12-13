@@ -1,12 +1,14 @@
 const express = require('express')
-const database = require('./database/db')
 const app = express()
-const categoryRoutes = require('./routes/categoryRoutes')
+const category_Routes = require('./routes/categoryRoutes')
+
+const productRoutes = require('./routes/productRoutes')
 
 
 app.use(express.json())
 
 app.use('/category', categoryRoutes)
+app.use('/products', productRoutes)
 
 
 
