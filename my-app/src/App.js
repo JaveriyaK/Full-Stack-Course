@@ -1,43 +1,19 @@
+import Navbar from "./layouts/Navbar"
+import Footer from "./layouts/Footer"
+import Content from "./components/Content";
 
+const App = () => {
 
-function App() {
-  return (
-    <div className="App">
-      Lorem ipsum dolor,sit amet consectetur
-      adipisicing elit. quaerat possimus, 
-      distinctio asperoius placeat eum 
-      repudiandae ipsa similique nam voluptate
-      neque molestiae blanditilis dignissimos 
-      illum quas expedita ab error accusamtium
-      culpa?
+     return (
+      <div className="App">
 
-       <h4>
-         I'm a h4
-         </h4>
-
-         <h4>
-         I'm a h4
-         </h4>
-
-         <h4>
-         I'm a h4
-         </h4>
-
-         <h4>
-         I'm a h4
-         </h4>
-
-         <h4>
-         I'm a h4
-         </h4>
-
-         <h4>
-         I'm a h4
-         </h4>
-         
-
-    </div>
-  );
+          <Navbar />
+          <Content /> 
+          <Footer />
+          
+          </div>
+    );
 }
+
 
 export default App;
