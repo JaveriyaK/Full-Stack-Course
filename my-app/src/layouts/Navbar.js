@@ -1,11 +1,14 @@
-const Navbar = () => {
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
+const Navbar = ( setcurrentComp ) => {
+     
     return (
         <nav>
-             <a href ="#">Home</a>
-                <a href ="#">About</a>
-                <a href ="#">Contact</a>
+            <a onClick={() => { setcurrentComp(' calculator') }} href="#">Calculator</a>
+            <a onClick={() => { setcurrentComp(' timer') }} href="#">Timer</a>
+            <a onClick={() => { setcurrentComp(' tap') }} href="#">Tap</a>
         </nav>
     );
 }
 
-export  default Navbar;
+export default Navbar;
